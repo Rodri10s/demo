@@ -1,5 +1,8 @@
 package com.ramon.basicas;
 
+import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,7 +17,7 @@ import lombok.Data;
 @Entity
 @Table(name = "cliente")
 @Data
-public class Cliente {
+public class Cliente implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,8 +27,8 @@ public class Cliente {
     private String cpf;
 
     @OneToOne(cascade = CascadeType.ALL)
-    private Cliente cliente;
+    private Endereco endereco;
 
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
-    private Veiculo veiculo;
+    private List<Veiculo> veiculo;
 }

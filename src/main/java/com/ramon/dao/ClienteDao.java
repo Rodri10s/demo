@@ -9,25 +9,25 @@ import com.ramon.basicas.Cliente;
 public class ClienteDao {
     private EntityManager em = GetEntityManager.getJpaConnection();
 
-    public void adicionar(Cliente c) {
+    public void add(Cliente cliente) {
         em.getTransaction().begin();
-        em.persist(c);
+        em.persist(cliente);
         em.getTransaction().commit();
     }
 
-    public Cliente buscarCategoriaId(int id) {
+    public Cliente findByIdCliente(int id) {
         return em.find(Cliente.class, id);
     }
 
-    public void atualizar(Cliente c) {
+    public void update(Cliente cliente) {
         em.getTransaction().begin();
-        em.merge(c);
+        em.merge(cliente);
         em.getTransaction().commit();
     }
 
     public List<Cliente> listar() {
 
-        return em.createQuery("select c from Categoria c", Categoria.class).getResultList();
+        return em.createQuery("select c from Categoria c", Cliente.class).getResultList();
 
     }
 }

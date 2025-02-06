@@ -9,11 +9,8 @@ import com.ramon.basicas.HistoricoServico;
 import com.ramon.basicas.Servico;
 import com.ramon.basicas.Veiculo;
 import com.ramon.dao.ClienteDao;
-import com.ramon.dao.EnderecoDAO;
 import com.ramon.dao.FuncionarioDAO;
-import com.ramon.dao.HistoricoServicoDAO;
 import com.ramon.dao.ServicoDAO;
-import com.ramon.dao.VeiculoDAO;
 
 public class Main {
     public static void main(String[] args) {
@@ -127,20 +124,15 @@ public class Main {
         clienteDao.add(cliente2);
         clienteDao.add(cliente3);
 
-        FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
-        funcionarioDAO.add(funcionario1);
-        funcionarioDAO.add(funcionario2);
-        funcionarioDAO.add(funcionario3);
-
         ServicoDAO servicoDAO = new ServicoDAO();
         servicoDAO.add(servico1);
         servicoDAO.add(servico2);
         servicoDAO.add(servico3);
 
-        HistoricoServicoDAO historicoServicoDAO = new HistoricoServicoDAO();
-        historicoServicoDAO.add(historico1);
-        historicoServicoDAO.add(historico2);
-        historicoServicoDAO.add(historico3);
+        FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
+        funcionarioDAO.add(funcionario1);
+        funcionarioDAO.add(funcionario2);
+        funcionarioDAO.add(funcionario3);
 
     }
 

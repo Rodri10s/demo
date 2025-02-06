@@ -14,6 +14,7 @@ import lombok.Data;
 @Table(name = "historico_servico")
 @Data
 public class HistoricoServico implements Serializable {
+
     @EmbeddedId
     private HistoricoServicoPK id = new HistoricoServicoPK();
 

@@ -1,16 +1,13 @@
 package com.ramon.basicas;
 
 import java.io.Serializable;
-import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -28,7 +25,4 @@ public class Veiculo implements Serializable {
     @ManyToOne
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
-
-    @OneToMany(mappedBy = "funcionario", cascade = CascadeType.ALL)
-    private List<HistoricoServico> historicoServico;
 }
